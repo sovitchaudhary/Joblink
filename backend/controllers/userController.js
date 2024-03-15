@@ -15,8 +15,8 @@ export const register = catchAsyncError(async (req, res, next) => {
     name,
     email,
     phone,
-    role,
     password,
+    role,
   });
   res.status(200).json({
     sucess: true,
