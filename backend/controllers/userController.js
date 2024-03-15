@@ -3,6 +3,7 @@ import ErrorHandler from "../middlewares/error.js";
 import { User } from "../models/userSchema.js";
 import { sendToken } from "../utils/jwtToken.js";
 
+// user registration functionality
 export const register = catchAsyncError(async (req, res, next) => {
   const { name, email, phone, password, role } = req.body;
   if (!name || !email || !phone || !password || !role) {
@@ -22,6 +23,7 @@ export const register = catchAsyncError(async (req, res, next) => {
   sendToken(user, 201, res, "User Registered!");
 });
 
+// user login functionality
 export const login = catchAsyncError(async (req, res, next) => {
   const { email, password, role } = req.body;
   if (!email || !password || !role) {
@@ -39,4 +41,18 @@ export const login = catchAsyncError(async (req, res, next) => {
     return next(new ErrorHandler(`User with provided email and ${role} not found!`, 404));
   }
   sendToken(user, 201, res, "User Logged In!");
+});
+
+// user logout functionality
+export const logout = catchAsyncError(async (req, res, next) => {
+  res
+    .status(201)
+    .cookie("token", "", {
+      httpOnly: true,
+      expires: new Date(Date.now()),
+    })
+    .json({
+      success: true,
+      message: "Logged Out Successfully.",
+    });
 });
