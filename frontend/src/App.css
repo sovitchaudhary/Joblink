@@ -196,7 +196,7 @@ p {
 }
 
 .footerShow {
-  background: #18191c;
+  background: #19274e;
   display: flex;
   justify-content: space-between;
   padding: 25px 120px;
@@ -1167,7 +1167,7 @@ p {
   }
 }
 nav {
-  background: #18191c;
+  background: #19274e;
   padding: 0 20px;
 }
 nav .container {
