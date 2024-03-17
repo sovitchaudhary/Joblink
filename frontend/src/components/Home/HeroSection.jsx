@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import { FaBuilding, FaSuitcase, FaUsers, FaUserPlus } from "react-icons/fa";
 
 const HeroSection = () => {
@@ -36,9 +36,8 @@ const HeroSection = () => {
             <h1>Find a job that suits</h1>
             <h1>your interests and skills</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
-              voluptate repellat modi quidem aliquid eaque ducimus ipsa et,
-              facere mollitia!
+              Job Link provides a full online recruitment service for anyone looking for a new job
+              by advertising new jobs for employees, employers and recruitment agencies.
             </p>
           </div>
           <div className="image">
@@ -58,9 +57,9 @@ const HeroSection = () => {
             );
           })}
         </div>
-      </div>  
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;
